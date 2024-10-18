@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pembelian Buku</title>
+    <link rel="stylesheet" href="/css/detailbeli.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <script>
+      function checkLoanDuration(event) {
+        event.preventDefault(); // Prevent form submission for validation
+        const loanDate = new Date(document.getElementById("loan-date").value);
+        const currentDate = new Date();
+        const timeDiff = currentDate - loanDate;
+        const dayDiff = timeDiff / (1000 * 3600 * 24);
+
+        if (dayDiff > 3) {
+          alert(
+            "Terima kasih sudah membeli."
+          );
+        } else {
+          document.getElementById("loan-form").submit(); // Submit form if within the allowed duration
+        }
+      }
+
+      // Function to display payment code based on the selected payment method
+      function showPaymentCode() {
+        const paymentMethod = document.getElementById("payment-method").value;
+        const paymentCode = document.getElementById("payment-code");
+
+        // Define the payment codes for each method
+        const codes = {
+          transfer: "1234567890",
+          gopay: "0987654321",
+          ovo: "8765432109",
+          dana: "038467890",
+          kartu: "Use your card details",
+        };
+
+        // Set the payment code based on the selected payment method
+        if (codes[paymentMethod]) {
+          paymentCode.textContent = `Kode Pembayaran: ${codes[paymentMethod]}`;
+          paymentCode.style.display = "block"; // Show the payment code element
+        } else {
+          paymentCode.style.display = "none"; // Hide the element if no method is selected
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <img src="images/logo22.png" alt="Logo" class="logo" />
+      <nav>
+        <a href="beranda.html">Beranda</a>
+        <a href="pembelian.html">pembelian</a>
+        <a href="favorit.html">favorit</a>
+        <a href="profil.html">
+          <img src="/images/pp.jfif" alt="userimages" class="profile-pic" />
+        </a>
+      </nav>
+    </div>
+    <main>
+      <div class="container">
+        <h1>Data Pembelian Buku</h1>
+        <div class="content">
+          <div class="image-section">
+            <img src="images/buku13.jpg" alt="Book Image" />
+          </div>
+          <div class="form-section">
+            <form
+              id="loan-form"
+              action="userpeminjaman.html"
+              onsubmit="checkLoanDuration(event)"
+              method="POST"
+              enctype="multipart/form-data"
+            >
+              <label for="name">Nama</label>
+              <input
+                type="text"
+                id="name"
+                placeholder="Masukkan Nama Lengkap"
+                required
+              />
+
+              <label for="book-type">Jenis Buku</label>
+              <input
+                type="text"
+                id="book-type"
+                placeholder="Masukkan Jenis Buku"
+                required
+              />
+
+              <label for="book-title">Judul Buku</label>
+              <input
+                type="text"
+                id="book-title"
+                placeholder="Masukkan Judul Buku"
+                required
+              />
+
+              <label for="loan-date">Tanggal Pembelian</label>
+              <input type="date" id="loan-date" required />
+
+              <!-- Metode Pembayaran -->
+              <div class="payment-method">
+                <label for="payment-method">Metode Pembayaran</label>
+                <select
+                  id="payment-method"
+                  onchange="showPaymentCode()"
+                  required
+                >
+                  <option value="">Pilih Metode Pembayaran</option>
+                  <option value="transfer">Transfer Bank</option>
+                  <option value="gopay">GoPay</option>
+                  <option value="ovo">OVO</option>
+                  <option value="dana">DANA</option>
+                  <option value="kartu">Kartu Kredit/Debit</option>
+                </select>
+              </div>
+
+              <!-- Kode Pembayaran -->
+              <div
+                id="payment-code"
+                style="display: none; margin-top: 20px; font-weight: bold"
+              ></div>
+
+              <!-- Upload Bukti Pembayaran -->
+              <div class="upload-section">
+                <label for="payment-proof">Unggah Bukti Pembayaran</label>
+                <input
+                  type="file"
+                  id="payment-proof"
+                  name="payment-proof"
+                  accept="image/*"
+                  required
+                />
+              </div>
+
+              <button type="submit">Beli</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <div class="footer-section about">
+          <p>
+            Tujuan jual beli buku online adalah untuk mempermudah akses pembeli
+            terhadap buku, memungkinkan mereka mendapatkan buku dengan cepat dan
+            mudah tanpa harus mengunjungi toko fisik. Selain itu, platform
+            online menyediakan pilihan yang lebih luas, termasuk buku langka dan
+            edisi khusus yang sulit ditemukan di toko lokal.
+          </p>
+        </div>
+        <div class="footer-section links">
+          <h2>Useful Links</h2>
+          <ul>
+            <li><a href="#">Beranda</a></li>
+            <li><a href="#">Pembelian</a></li>
+            <li><a href="#">Favorit</a></li>
+          </ul>
+        </div>
+        <div class="footer-section contact">
+          <h2>Hubungi Kami</h2>
+          <p>J.BO</p>
+          <p>Jl. xxxx. No. 3, Tanjung Pinang 29125, Indonesia</p>
+          <p>Phone : 08XXXXXXXX</p>
+          <p>Email : help@J.BO</p>
+          <div class="socials">
+            <a href="#"><img src="images/twitter.png" alt="Twitter" /></a>
+            <a href="#"><img src="images/fb.png" alt="Facebook" /></a>
+            <a href="#"><img src="images/instagram.png" alt="Instagram" /></a>
+            <a href="#"><img src="images/yt.png" alt="YouTube" /></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright J.BO. All Rights Reserved, 2024</p>
+      </div>
+    </footer>
+  </body>
+</html>

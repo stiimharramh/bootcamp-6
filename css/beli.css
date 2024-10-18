@@ -1,0 +1,180 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    background-color: #ffff;
+    color: #795c32;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header .logo {
+    height: 40px;
+    width: auto; /* Keeps the logo aspect ratio */
+}
+
+.header .profile-pic {
+    height: 30px;
+    width: 30px; /* Ensure the profile picture is square */
+    border-radius: 50%; /* Makes the profile image circular */
+    object-fit: cover; /* Ensures the image fits nicely within the circular frame */
+}
+
+.header nav a {
+    color: #795c32;
+    text-decoration: none;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+.header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    padding: 20px;
+}
+
+.order-container {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.order-header {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-bottom: 1px solid #ddd;
+    font-family: 'Poppins', sans-serif;
+}
+
+.order-header h2 {
+    margin: 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+.order-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    padding: 20px;
+    border-bottom: 1px solid #ddd;
+    align-items: center;
+}
+
+.order-details {
+    display: flex;
+    align-items: center;
+}
+
+.order-details img {
+    height: 60px;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+.order-summary {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-top: 1px dashed #ddd;
+}
+
+.contact-seller {
+    text-align: center;
+    padding: 20px;
+}
+
+.contact-seller button {
+    background-color: #795c32;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #795c32;
+    color: #fff;
+}
+
+.footer-logo img {
+    max-width: 100px; /* Adjust this value to control the width */
+    height: auto; /* Ensures the aspect ratio is maintained */
+}
+
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+}
+
+.footer-section h2 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    border-bottom: 2px solid #795c32;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #795c32;
+}
+
+.footer-section p, .footer-section .socials a {
+    margin-bottom: 10px;
+}
+
+.footer-section .socials a img {
+    height: 24px;
+    margin-right: 10px;
+    transition: transform 0.3s;
+}
+
+.footer-section .socials a:hover img {
+    transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px;
+    background-color: #795c32;
+    color: #fff;
+}
+
+.footer-bottom p {
+    margin: 0;
+}

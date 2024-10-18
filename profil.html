@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>pembelian</title>
+    <link rel="stylesheet" href="/css/profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+</head>
+<body>
+    <div class="header">
+        <img src="images/logo22.png" alt=" Logo" class="logo">
+        <nav>
+            <a href="beranda.html">Beranda</a>
+            <a href="pembelian.html">pembelian</a>
+            <a href="favorit.html">favorit</a>
+            <a href="images/profil.jfif"> <img src="/images/profil.jfif" alt="userimages"> </a>
+        </nav>
+    </div>
+
+    <div class="container">
+            <div class="profile-upload">
+                <div class="profile-info">
+                    <img src="images/iqbal2.jpeg" alt="Foto Profil" class="profile-upload-img">
+                    <div>
+                        <p>Unggah Foto Profil Anda</p>
+                        <p>Unggah Foto Profil Agar Orang Lain Dapat Mengenali Anda</p>
+                    </div>
+                </div>
+                <button type="button" class="upload-btn" onclick="uploadPhoto()">Unggah Foto</button>
+            </div>
+            <hr class="divider">
+            <div class="account-details">
+                <div class="detail-item">
+                    <label>Nama Lengkap</label>
+                    <div class="detail-content">
+                        <span id="nama">Admin</span>
+                        <button type="button" class="edit-btn" onclick="editName()">Edit</button>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="detail-item">
+                    <label>Alamat Email</label>
+                    <div class="detail-content">
+                        <span id="email">J.BO@google.com</span>
+                        <button type="button" class="edit-btn" onclick="editEmail()">Edit</button>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="detail-item">
+                    <label>Kata Sandi</label>
+                    <div class="detail-content">
+                        <span id="password">***</span>
+                        <button type="button" class="edit-btn" onclick="changePassword()">Ganti Kata Sandi</button>
+                    </div>
+                </div>
+                <hr class="divider">
+                <div class="detail-item">
+                    <label>Alamat Saya</label>
+                    <div class="detail-content">
+                        <span id="address">Tanjungpinang</span>
+                        <button type="button" class="edit-btn" onclick="editAddress()">Ubah Alamat</button>
+                    </div>
+                </div>
+            </div>
+            <div id="data-section" class="data-section">
+                <!-- Data Peminjaman dan Pengembalian akan ditampilkan di sini -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('menu');
+            menu.style.display = menu.style.display === 'block' ? 'none' : 'block';
+        }
+
+        function uploadPhoto() {
+            alert('Unggah Foto');
+        }
+
+        function editName() {
+            const name = prompt('Masukkan nama baru:', document.getElementById('nama').innerText);
+            if (name !== null && name !== '') {
+                document.getElementById('nama').innerText = name;
+            }
+        }
+
+        function editEmail() {
+            const email = prompt('Masukkan email baru:', document.getElementById('email').innerText);
+            if (email !== null && email !== '') {
+                document.getElementById('email').innerText = email;
+            }
+        }
+
+        function changePassword() {
+            const password = prompt('Masukkan kata sandi baru:');
+            if (password !== null && password !== '') {
+                document.getElementById('password').innerText = '***';
+            }
+        }
+
+        function editAddress() {
+            const address = prompt('Masukkan alamat baru:', document.getElementById('address').innerText);
+            if (address !== null && address !== '') {
+                document.getElementById('address').innerText = address;
+            }
+        }
+
+        function showBorrowingData() {
+            document.getElementById('data-section').innerHTML = '<h2>Data Peminjaman</h2><p>Informasi tentang peminjaman buku akan ditampilkan di sini.</p>';
+        }
+
+        function showReturnData() {
+            document.getElementById('data-section').innerHTML = '<h2>Data Pengembalian</h2><p>Informasi tentang pengembalian buku akan ditampilkan di sini.</p>';
+        }
+    </script>
+</body>
+</html>

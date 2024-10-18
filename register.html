@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buat Akun</title>
+    <link rel="stylesheet" href="/css/register.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="image-section">
+        <img src="images/perpustakaan-terbaik (1).jpg" alt="Food Image" />
+      </div>
+      <div class="form-section">
+        <h1>BUAT AKUN</h1>
+        <p>Silahkan Daftar Akun Anda</p>
+        <form>
+          <input type="text" placeholder="Masukkan Nama Lengkap" required />
+          <input type="email" placeholder="Masukkan Email" required />
+          <input type="text" placeholder="Masukkan Username" required />
+          <input type="tel" placeholder="Masukkan Nomor Hp" required />
+          <div class="password-container">
+            <input type="password" placeholder="Masukkan Password" required />
+            <button type="button" class="toggle-password"></button>
+          </div>
+          <button type="button" class="register-button" id="register-button">
+            DAFTAR
+          </button>
+        </form>
+        <p>Sudah Punya Akun? <a href="login.html">Masuk</a></p>
+      </div>
+    </div>
+    <script>
+      document.getElementById("register-button").onclick = function () {
+        window.location.href = "login.html"; // Redirect to login.html
+      };
+    </script>
+  </body>
+</html>
